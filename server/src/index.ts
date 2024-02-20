@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { serve } from "@hono/node-server";
 import { logger } from "hono/logger";
 
-const app = new Hono().basePath("/");
+const app = new Hono().basePath("/api");
 
 app.use("*", logger());
 app.get("/" , (c) => c.json({ status: 200, message: "Success" } , 200));
